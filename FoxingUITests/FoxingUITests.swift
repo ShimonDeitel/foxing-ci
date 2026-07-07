@@ -93,10 +93,13 @@ final class FoxingUITests: XCTestCase {
         addSampleInvoice(name: "Delete Target", amount: "150")
         XCTAssertTrue(app.staticTexts["Delete Target"].waitForExistence(timeout: 5))
 
+        // The card lives in a ScrollView/LazyVStack, not a List, so delete is
+        // exposed via a long-press context menu (not swipeActions, which only
+        // functions inside a List).
         let cardPredicate = NSPredicate(format: "identifier BEGINSWITH 'invoiceCard-'")
         let card = app.descendants(matching: .any).matching(cardPredicate).firstMatch
         XCTAssertTrue(card.waitForExistence(timeout: 5))
-        card.swipeLeft()
+        card.press(forDuration: 1.0)
 
         let deletePredicate = NSPredicate(format: "identifier BEGINSWITH 'deleteInvoiceButton-'")
         let deleteButton = app.buttons.matching(deletePredicate).firstMatch

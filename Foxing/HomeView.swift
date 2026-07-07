@@ -132,7 +132,7 @@ struct HomeView: View {
                 Spacer()
                 Button {
                     withAnimation { stampingInvoiceID = invoice.id }
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.9) {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.8) {
                         store.markPaid(invoice)
                         stampingInvoiceID = nil
                     }
@@ -157,7 +157,7 @@ struct HomeView: View {
         .onTapGesture {
             activeSheet = .editInvoice(invoice)
         }
-        .swipeActions(edge: .trailing) {
+        .contextMenu {
             Button(role: .destructive) {
                 store.deleteInvoice(invoice)
             } label: {
