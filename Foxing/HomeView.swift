@@ -165,7 +165,6 @@ struct HomeView: View {
             }
             .accessibilityIdentifier("deleteInvoiceButton-\(invoice.id.uuidString)")
         }
-        .accessibilityElement(children: .combine)
         .accessibilityIdentifier("invoiceCard-\(invoice.id.uuidString)")
     }
 

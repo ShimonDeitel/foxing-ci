@@ -72,7 +72,7 @@ final class FoxingUITests: XCTestCase {
         addSampleInvoice(name: "Edit Target", amount: "400")
 
         let cardPredicate = NSPredicate(format: "identifier BEGINSWITH 'invoiceCard-'")
-        let card = app.otherElements.matching(cardPredicate).firstMatch
+        let card = app.descendants(matching: .any).matching(cardPredicate).firstMatch
         XCTAssertTrue(card.waitForExistence(timeout: 5))
         card.tap()
 
@@ -94,7 +94,7 @@ final class FoxingUITests: XCTestCase {
         XCTAssertTrue(app.staticTexts["Delete Target"].waitForExistence(timeout: 5))
 
         let cardPredicate = NSPredicate(format: "identifier BEGINSWITH 'invoiceCard-'")
-        let card = app.otherElements.matching(cardPredicate).firstMatch
+        let card = app.descendants(matching: .any).matching(cardPredicate).firstMatch
         XCTAssertTrue(card.waitForExistence(timeout: 5))
         card.swipeLeft()
 
