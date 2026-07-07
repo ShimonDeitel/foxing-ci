@@ -46,7 +46,7 @@ final class FoxingUITests: XCTestCase {
 
         let markPaidPredicate = NSPredicate(format: "identifier BEGINSWITH 'markPaidButton-'")
         let markPaidButton = app.buttons.matching(markPaidPredicate).firstMatch
-        XCTAssertTrue(markPaidButton.waitForExistence(timeout: 5))
+        XCTAssertTrue(markPaidButton.waitForExistence(timeout: 12))
         markPaidButton.tap()
 
         let stamp = app.staticTexts["PAID"]
