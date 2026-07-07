@@ -1,0 +1,29 @@
+{
+  "identifier" : "foxing",
+  "nonRenewingSubscriptions" : [],
+  "products" : [
+    {
+      "displayPrice" : "2.99",
+      "familyShareable" : false,
+      "internalID" : "foxing_pro_unlock",
+      "localizations" : [
+        {
+          "description" : "Unlocks unlimited tracked invoices",
+          "displayName" : "Foxing Pro",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "foxing_pro_unlock",
+      "referenceName" : "Foxing Pro Unlock",
+      "type" : "NonConsumable"
+    }
+  ],
+  "settings" : {
+    "_askToBuyEnabled" : false
+  },
+  "subscriptionGroups" : [],
+  "version" : {
+    "major" : 3,
+    "minor" : 0
+  }
+}
